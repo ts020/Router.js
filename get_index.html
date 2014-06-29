@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+
+<ul>
+  <li><a href="/get_index.html?page=index">/get_index.html?page=index</a></li>
+  <li><a href="/get_index.html?page=sample1">/get_index.html?page=sample1</a></li>
+  <li><a href="/get_index.html?page=sample2">/get_index.html?page=sample2</a></li>
+</ul>
+
+<script type="text/javascript" src="js/Router.js"></script>
+<script type="text/javascript" src="js/Controllers.js"></script>
+<script type="text/javascript">
+  var router = new util.GetRouter({
+    "?page=index" : controllers.IndexController,
+    "?page=sample1" : controllers.Sample1Controller,
+    "?page=sample2" : controllers.Sample2Controller
+  });
+  var controller = router.getController();
+  controller.showAlert();
+</script>
+</body>
+</html>
